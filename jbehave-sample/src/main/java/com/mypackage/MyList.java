@@ -3,11 +3,11 @@ package com.mypackage;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MyList {
+public class MyList  {
     private List<Integer> list = new ArrayList<Integer>();
 
     public void add(int number) {
-        list.add(number);
+         list.add(number);
     }
 
     public int size() {
