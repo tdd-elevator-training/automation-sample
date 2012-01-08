@@ -16,7 +16,7 @@ public class SitePage {
     }
 
     public ProductList getProductList() {
-        return null;
+        return new ProductList();
     }
 
     public SearchBox getSearchBox() {
