@@ -10,6 +10,6 @@ public class SitePage {
     }
 
     public String getTitle() {
-        return "Amazon.com";
+        return webDriver.getTitle();
     }
 }

@@ -6,6 +6,7 @@ import org.hamcrest.Matchers;
 import org.hamcrest.core.IsEqual;
 import org.junit.Before;
 import org.junit.Test;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertNotNull;
@@ -17,7 +18,7 @@ public class BrowserTest {
 
     @Before
     public void setUp() throws Exception {
-        browser = new Browser();
+        browser = new Browser(new HtmlUnitDriver());
     }
 
     @Test
@@ -30,11 +31,20 @@ public class BrowserTest {
     }
 
     @Test
-    public void shouldReturnTitle() {
+    public void shouldReturnTitleForAmazon() {
         SitePage page = getAmazonPage();
         assertThat(page.getTitle(), Matchers.containsString("Amazon.com"));
     }
 
+    @Test
+    public void shouldReturnTitleForRambler() {
+        SitePage page = getPage("http://ebay.com");
+        assertThat(page.getTitle(), Matchers.containsString("eBay"));
+    }
+
+    private SitePage getPage(String url) {
+        return browser.open(url);
+    }
 
 }
 
