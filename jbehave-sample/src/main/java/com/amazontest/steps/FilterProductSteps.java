@@ -1,17 +1,16 @@
 package com.amazontest.steps;
 
 import com.amazontest.dom.Browser;
-import com.amazontest.dom.ProductItem;
-import com.amazontest.dom.SitePage;
-import org.hamcrest.Matchers;
-import org.jbehave.core.annotations.*;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.allOf;
-import static org.hamcrest.Matchers.containsString;
+import com.amazontest.dom.SitePage;
+import org.fest.assertions.Assertions;
+
+import org.jbehave.core.annotations.*;
+
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+
+
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
@@ -50,11 +49,11 @@ public class FilterProductSteps {
         assertNotNull(page.getProductList());
     }
 
-    @Then("each item in a product list contains $string")
-    public void checkFoundItemsContains(String string) {
-        assertThat(page.getProductList().getItems(),
-                allOf(Matchers.<Object>hasProperty("title",
-                        containsString(string))));
+    @Then("there are some items present")
+    public void checkProductListItemsPresent() {
+        Assertions.assertThat(page.getProductList().getItems())
+            .onProperty("title")
+            .isNotEmpty();
     }
 
     @AfterStories

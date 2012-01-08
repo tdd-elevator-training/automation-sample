@@ -16,7 +16,7 @@ public class SitePage {
     }
 
     public ProductList getProductList() {
-        return new ProductList();
+        return new ProductList(webDriver);
     }
 
     public SearchBox getSearchBox() {
