@@ -11,7 +11,6 @@ import java.util.List;
 
 public class ProductList {
     private WebDriver webDriver;
-    private List<ProductItem> productItems;
 
     public ProductList(WebDriver webDriver) {
 
@@ -19,16 +18,16 @@ public class ProductList {
     }
 
     public List<ProductItem> getItems() {
-        productItems = new LinkedList<ProductItem>();
+        List<ProductItem> result = new LinkedList<ProductItem>();
         int i = 0;
         try {
             while (true) {
                 WebElement element = webDriver.findElement(By.id("result_" + i));
-                productItems.add(new ProductItem(element));
+                result.add(new ProductItem(element));
                 i++;
             }
         } catch (NoSuchElementException e) {
-            return productItems;
+            return result;
         }
     }
 }

@@ -19,27 +19,18 @@ public class FilterProductSteps {
     private Browser browser;
     private SitePage page;
 
-    @Given("browser")
-    public void browser() {
+    @Given("browser open at '$address'")
+    public void browser(String address) {
         browser = new Browser(new FirefoxDriver());
-    }
-    
-    @When("I open $address")
-    public void typeInBrowser(String address) {
         page = browser.open(address);
     }
 
-    @Then("I see home page contains $pageTitle in title")
+    @Then("I see home page contains '$pageTitle' in title")
     public void compareTitlePage(String pageTitle) {
         assertTrue(page.getTitle().contains(pageTitle));
     }
 
-    @Given("search box")
-    public void searchBox() {
-
-    }
-
-    @When("I search by $string")
+    @When("I search by '$string'")
     public void searchProductBy(String string) {
         page.getSearchBox().search(string);
     }

@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 public class ProductItem {
-    private String title;
     private WebElement element;
 
     public ProductItem(WebElement element) {
@@ -12,7 +11,10 @@ public class ProductItem {
     }
 
     public String getTitle() {
-        WebElement aElement = element.findElement(new By.ByXPath("//a[@class='title']"));
-        return aElement.getText();
+        return findByXpath("//a[@class='title']").getText();
+    }
+
+    private WebElement findByXpath(String xpathExpression) {
+        return element.findElement(new By.ByXPath(xpathExpression));
     }
 }
