@@ -1,6 +1,7 @@
 package com.amazontest.dom;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
 
 import java.awt.*;
 
@@ -20,6 +21,6 @@ public class SitePage {
     }
 
     public SearchBox getSearchBox() {
-        return new SearchBox(webDriver);
+        return PageFactory.initElements(webDriver, SearchBox.class);
     }
 }
