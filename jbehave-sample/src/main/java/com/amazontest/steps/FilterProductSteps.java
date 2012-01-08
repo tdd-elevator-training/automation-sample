@@ -4,10 +4,7 @@ import com.amazontest.dom.Browser;
 import com.amazontest.dom.ProductItem;
 import com.amazontest.dom.SitePage;
 import org.hamcrest.Matchers;
-import org.jbehave.core.annotations.AfterScenario;
-import org.jbehave.core.annotations.Given;
-import org.jbehave.core.annotations.Then;
-import org.jbehave.core.annotations.When;
+import org.jbehave.core.annotations.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
@@ -49,7 +46,7 @@ public class FilterProductSteps {
     }
 
     @Then("I see a product list")
-    public void checkProductListAvaluiable() {
+    public void checkProductListAvailable() {
         assertNotNull(page.getProductList());
     }
 
@@ -60,7 +57,7 @@ public class FilterProductSteps {
                         containsString(string))));
     }
 
-    @AfterScenario
+    @AfterStories
     public void closeBrowser() {
         browser.close();
     }
