@@ -2,6 +2,8 @@ package com.amazontest.dom;
 
 import org.openqa.selenium.WebDriver;
 
+import java.awt.*;
+
 public class SitePage {
     private WebDriver webDriver;
 
@@ -11,5 +13,13 @@ public class SitePage {
 
     public String getTitle() {
         return webDriver.getTitle();
+    }
+
+    public ProductList getProductList() {
+        return null;
+    }
+
+    public SearchBox getSearchBox() {
+        return new SearchBox(webDriver);
     }
 }
