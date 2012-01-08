@@ -5,7 +5,6 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 

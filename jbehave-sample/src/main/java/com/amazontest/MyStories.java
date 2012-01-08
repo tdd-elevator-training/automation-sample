@@ -27,14 +27,7 @@ import static org.jbehave.core.reporters.Format.HTML;
 import static org.jbehave.core.reporters.Format.TXT;
 import static org.jbehave.core.reporters.Format.XML;
 
-/**
- * <p>
- * {@link Embeddable} class to run multiple textual stories via JUnit.
- * </p>
- * <p>
- * Stories are specified in classpath and correspondingly the {@link LoadFromClasspath} story loader is configured.
- * </p> 
- */
+
 public class MyStories extends JUnitStories {
     
     public MyStories() {

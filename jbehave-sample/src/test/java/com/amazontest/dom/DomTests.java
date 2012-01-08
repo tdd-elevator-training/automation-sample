@@ -5,7 +5,7 @@ import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
 import java.net.URL;
 
-public class DomTests {
+abstract class DomTests {
     private Browser browser;
     private HtmlUnitDriver webDriver;
 

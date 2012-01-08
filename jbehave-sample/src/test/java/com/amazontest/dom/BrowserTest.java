@@ -1,11 +1,8 @@
 package com.amazontest.dom;
 
 import org.hamcrest.Matchers;
-import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
-import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertNotNull;
 import static org.hamcrest.MatcherAssert.assertThat;
 

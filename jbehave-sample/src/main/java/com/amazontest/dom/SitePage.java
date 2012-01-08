@@ -3,8 +3,6 @@ package com.amazontest.dom;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-import java.awt.*;
-
 public class SitePage {
     private WebDriver webDriver;
 

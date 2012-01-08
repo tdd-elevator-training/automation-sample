@@ -3,14 +3,12 @@ package com.amazontest.steps;
 import com.amazontest.dom.Browser;
 
 import com.amazontest.dom.SitePage;
-import org.fest.assertions.Assertions;
 
 import org.jbehave.core.annotations.*;
 
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-
-
+import static com.amazontest.steps.DomAssertion.assertThat;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
@@ -27,7 +25,7 @@ public class FilterProductSteps {
 
     @Then("I see home page contains '$pageTitle' in title")
     public void compareTitlePage(String pageTitle) {
-        assertTrue(page.getTitle().contains(pageTitle));
+        assertThat(page).titleContains(pageTitle);
     }
 
     @When("I search by '$string'")
@@ -42,9 +40,7 @@ public class FilterProductSteps {
 
     @Then("there are some items present")
     public void checkProductListItemsPresent() {
-        Assertions.assertThat(page.getProductList().getItems())
-            .onProperty("title")
-            .isNotEmpty();
+        assertThat(page.getProductList()).hasElements();
     }
 
     @AfterStories
