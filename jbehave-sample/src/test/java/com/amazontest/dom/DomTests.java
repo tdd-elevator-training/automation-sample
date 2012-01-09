@@ -1,11 +1,13 @@
 package com.amazontest.dom;
 
 import org.junit.Before;
+
+import org.junit.Ignore;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
 import java.net.URL;
-
-abstract class DomTests {
+@Ignore
+public abstract class DomTests {
     private Browser browser;
     private HtmlUnitDriver webDriver;
 
