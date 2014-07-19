@@ -11,7 +11,7 @@ public class ProductItem {
     }
 
     public String getTitle() {
-        return findByXpath("//a[@class='title']").getText();
+        return findByXpath("//span[@class='lrg bold']").getText();
     }
 
     private WebElement findByXpath(String xpathExpression) {

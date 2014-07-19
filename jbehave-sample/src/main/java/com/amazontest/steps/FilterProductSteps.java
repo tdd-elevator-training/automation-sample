@@ -6,6 +6,7 @@ import com.amazontest.dom.SitePage;
 
 import org.jbehave.core.annotations.*;
 
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import static com.amazontest.steps.DomAssertion.assertThat;
@@ -19,7 +20,8 @@ public class FilterProductSteps {
 
     @Given("browser open at '$address'")
     public void browser(String address) {
-        browser = new Browser(new FirefoxDriver());
+        System.setProperty("webdriver.chrome.driver", "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chromedriver.exe");
+        browser = new Browser(new ChromeDriver());
         page = browser.open(address);
     }
 

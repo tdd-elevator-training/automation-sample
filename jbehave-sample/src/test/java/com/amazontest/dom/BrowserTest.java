@@ -10,18 +10,18 @@ public class BrowserTest extends DomTests {
 
     @Test
     public void shouldOpenBrowser() {
-        assertNotNull(getPage("amazon.homepage.htm"));
+        assertNotNull(getPage("http://amazon.com"));
     }
 
     @Test
     public void shouldReturnTitleForAmazon() {
-        SitePage page = getPage("amazon.homepage.htm");
+        SitePage page = getPage("http://amazon.com");
         assertThat(page.getTitle(), Matchers.containsString("Amazon.com"));
     }
 
     @Test
     public void shouldReturnTitleForRambler() {
-        SitePage page = getPage("ebay.homepage.htm");
+        SitePage page = getPage("http://ebay.com");
         assertThat(page.getTitle(), Matchers.containsString("eBay"));
     }
 

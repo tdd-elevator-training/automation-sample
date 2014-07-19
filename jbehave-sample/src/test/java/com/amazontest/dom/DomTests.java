@@ -3,13 +3,14 @@ package com.amazontest.dom;
 import org.junit.Before;
 
 import org.junit.Ignore;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
 import java.net.URL;
 @Ignore
 public abstract class DomTests {
     private Browser browser;
-    private HtmlUnitDriver webDriver;
+    private WebDriver webDriver;
 
     @Before
     public void setUp() throws Exception {

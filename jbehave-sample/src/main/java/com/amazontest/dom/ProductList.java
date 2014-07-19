@@ -12,7 +12,6 @@ public class ProductList {
     private WebDriver webDriver;
 
     public ProductList(WebDriver webDriver) {
-
         this.webDriver = webDriver;
     }
 

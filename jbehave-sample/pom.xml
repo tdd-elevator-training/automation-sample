@@ -8,8 +8,10 @@
     <name>JBehave Stories</name>
 
     <properties>
-        <jbehave.core.version>3.5.4</jbehave.core.version>
-        <jbehave.site.version>3.1.1</jbehave.site.version>
+        <jbehave.core.version>3.9.3</jbehave.core.version>
+        <jbehave.site.version>3.2</jbehave.site.version>
+        <selenium.version>2.42.2</selenium.version>
+        <google.guava.version>17.0</google.guava.version>
         <embeddables>**/*Stories.java</embeddables>
     </properties>
 
@@ -35,7 +37,7 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>2.16.0</version>
+            <version>${selenium.version}</version>
         </dependency>
         <dependency>
             <groupId>org.easytesting</groupId>
@@ -45,7 +47,7 @@
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>11.0</version>
+            <version>${google.guava.version}</version>
         </dependency>
         <!--dependency>
           <groupId>org.jbehave</groupId>

@@ -9,13 +9,13 @@ public class SitePageTest extends DomTests {
 
     @Test
     public void shouldGiveSearchBox(){
-        SitePage page = getPage("amazon.homepage.htm");
+        SitePage page = getPage("http://amazon.com");
 
         assertNotNull(page.getSearchBox());
     }
 
     @Test
-    public void shouldSearchBySeacrhBox(){
+    public void shouldSearchBySearchBox(){
         SitePage page = getPage("http://amazon.com");
 
         page.getSearchBox().search("optical mouse");
