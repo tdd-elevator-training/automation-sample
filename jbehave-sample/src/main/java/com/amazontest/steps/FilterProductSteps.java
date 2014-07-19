@@ -40,9 +40,10 @@ public class FilterProductSteps {
         assertNotNull(page.getProductList());
     }
 
-    @Then("there are some items present")
-    public void checkProductListItemsPresent() {
+    @Then("there are some items present contains '$string'")
+    public void checkProductListItemsPresentContains(String string) {
         assertThat(page.getProductList()).hasElements();
+        assertThat(page.getProductList()).contains(string);
     }
 
     @AfterStories

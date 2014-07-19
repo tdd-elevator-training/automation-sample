@@ -24,6 +24,14 @@ public class DomAssertion {
                 .onProperty("title")
                 .isNotEmpty();
         }
+
+        public void contains(String string) {
+            assertNotNull(list);
+            Assertions.assertThat(list.getItems())
+                    .isNotEmpty()
+                    .onProperty("title")
+                    .contains(string);
+        }
     }
 
     public static SitePageAssertion assertThat(SitePage page) {

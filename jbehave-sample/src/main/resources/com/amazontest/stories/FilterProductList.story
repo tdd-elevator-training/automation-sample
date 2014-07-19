@@ -11,5 +11,5 @@ Scenario: User search by product name
 
 When I search by 'Kindle'
 Then I see a product list
-Then there are some items present
+Then there are some items present contains 'Kindle'
 

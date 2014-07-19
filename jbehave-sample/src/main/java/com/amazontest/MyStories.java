@@ -1,8 +1,7 @@
 package com.amazontest;
 
-import java.text.SimpleDateFormat;
-import java.util.List;
-
+import com.amazontest.steps.FilterProductSteps;
+import de.codecentric.jbehave.junit.monitoring.JUnitReportingRunner;
 import org.jbehave.core.Embeddable;
 import org.jbehave.core.configuration.Configuration;
 import org.jbehave.core.configuration.MostUsefulConfiguration;
@@ -19,15 +18,15 @@ import org.jbehave.core.steps.InstanceStepsFactory;
 import org.jbehave.core.steps.ParameterConverters;
 import org.jbehave.core.steps.ParameterConverters.DateConverter;
 import org.jbehave.core.steps.ParameterConverters.ExamplesTableConverter;
-import com.amazontest.steps.FilterProductSteps;
+import org.junit.runner.RunWith;
+
+import java.text.SimpleDateFormat;
+import java.util.List;
 
 import static org.jbehave.core.io.CodeLocations.codeLocationFromClass;
-import static org.jbehave.core.reporters.Format.CONSOLE;
-import static org.jbehave.core.reporters.Format.HTML;
-import static org.jbehave.core.reporters.Format.TXT;
-import static org.jbehave.core.reporters.Format.XML;
+import static org.jbehave.core.reporters.Format.*;
 
-
+@RunWith(JUnitReportingRunner.class)
 public class MyStories extends JUnitStories {
     
     public MyStories() {
@@ -47,7 +46,7 @@ public class MyStories extends JUnitStories {
                 new ExamplesTableConverter(examplesTableFactory));
         return new MostUsefulConfiguration()
             .useStoryLoader(new LoadFromClasspath(embeddableClass))
-            .useStoryParser(new RegexStoryParser(examplesTableFactory)) 
+            .useStoryParser(new RegexStoryParser(examplesTableFactory))
             .useStoryReporterBuilder(new StoryReporterBuilder()
                 .withCodeLocation(CodeLocations.codeLocationFromClass(embeddableClass))
                 .withDefaultFormats()
@@ -63,7 +62,6 @@ public class MyStories extends JUnitStories {
     @Override
     protected List<String> storyPaths() {
         return new StoryFinder().findPaths(codeLocationFromClass(this.getClass()), "**/*.story", "**/excluded*.story");
-                
+
     }
-        
 }

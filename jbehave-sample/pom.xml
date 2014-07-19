@@ -49,6 +49,11 @@
             <artifactId>guava</artifactId>
             <version>${google.guava.version}</version>
         </dependency>
+        <dependency>
+            <groupId>de.codecentric</groupId>
+            <artifactId>jbehave-junit-runner</artifactId>
+            <version>1.1.2</version>
+        </dependency>
         <!--dependency>
           <groupId>org.jbehave</groupId>
           <artifactId>jbehave-junit-monitor</artifactId>
